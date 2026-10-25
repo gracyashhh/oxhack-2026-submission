@@ -48,7 +48,7 @@ def settings(load_db, save_db):
             st.caption('Camera is off. Enable the switch above before pressing Play.')
         else:
             try:
-                with urlopen((os.getenv('CHRONOS_RUNTIME_MONITOR_URL') or os.getenv('MONITOR_BROWSER_URL','https://oxhack-2026-submission.onrender.com')) + '/health', timeout=1) as response:
+                with urlopen((os.getenv('CHRONOS_RUNTIME_MONITOR_URL') or os.getenv('MONITOR_BROWSER_URL','https://oxhack-2026-submission.onrender.com')) + '/health', timeout=5) as response:
                     health = json.load(response)
                 st.caption('Monitor ready: camera permission will be requested when you press Play.' if health.get('configured') else 'Add PRESAGE_API_KEY to .env.local and restart with ./run.command.')
             except Exception:
