@@ -6,7 +6,7 @@ const {WebSocketServer} = require('ws');
 const {createPresageCore}=require('./presage_core');
 const {withObservers}=require('./sdk_events');
 
-function createMonitorServer({sdkFactory, receiver='http://127.0.0.1:8766', allowedOrigins=['http://localhost:8501','http://127.0.0.1:8501'],startupGraceMs=60000,inputMode='browser'}={}) {
+function createMonitorServer({sdkFactory, receiver=process.env.MEASUREMENT_RECEIVER_URL || 'http://127.0.0.1:8766', allowedOrigins=['http://localhost:8501','http://127.0.0.1:8501'],startupGraceMs=60000,inputMode='browser'}={}) {
   let sdk, core, statuses, active=null, busy=false, pending=null, delivery=null;
   const origins=new Set(allowedOrigins);
   const finalisations=new Map(),runDiagnostics=new Map();
