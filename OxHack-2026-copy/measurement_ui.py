@@ -48,7 +48,7 @@ def settings(load_db, save_db):
             st.caption('Camera is off. Enable the switch above before pressing Play.')
         else:
             try:
-                with urlopen((os.getenv('CHRONOS_RUNTIME_MONITOR_URL') or os.getenv('MONITOR_BROWSER_URL','http://127.0.0.1:3001')) + '/health', timeout=1) as response:
+                with urlopen((os.getenv('CHRONOS_RUNTIME_MONITOR_URL') or os.getenv('MONITOR_BROWSER_URL','https://oxhack-2026-submission.onrender.com')) + '/health', timeout=1) as response:
                     health = json.load(response)
                 st.caption('Monitor ready: camera permission will be requested when you press Play.' if health.get('configured') else 'Add PRESAGE_API_KEY to .env.local and restart with ./run.command.')
             except Exception:
@@ -75,7 +75,7 @@ def player_config(session, load_db):
     token = store.issue_ticket(identity, st.session_state.get('username') or identity, metadata)
     config = {'token': token, 'fingerprint': fingerprint,
               'capture_mode': os.getenv('CHRONOS_RUNTIME_CAMERA_INPUT', 'browser'),
-              'url': (os.getenv('CHRONOS_RUNTIME_MONITOR_URL') or os.getenv('MONITOR_BROWSER_URL','http://127.0.0.1:3001'))}
+              'url': (os.getenv('CHRONOS_RUNTIME_MONITOR_URL') or os.getenv('MONITOR_BROWSER_URL','https://oxhack-2026-submission.onrender.com'))}
     st.session_state['measurement_player'] = config
     return config
 
