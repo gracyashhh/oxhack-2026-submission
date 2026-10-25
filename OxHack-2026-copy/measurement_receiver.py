@@ -43,6 +43,6 @@ def start_receiver(store, port=8766):
             self.send_header('Content-Type', 'application/json')
             self.send_header('Content-Length', str(len(body)))
             self.end_headers(); self.wfile.write(body)
-    server = ThreadingHTTPServer(('127.0.0.1', port), Handler)
+    server = ThreadingHTTPServer(('0.0.0.0', port), Handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
     return server
