@@ -277,7 +277,7 @@ if not st.session_state.get("signed_up", False):
                     result = oauth2.authorize_button(
                         name="Sign in with Google",
                         icon="https://www.google.com/favicon.ico",
-                        redirect_uri="http://localhost:8501",
+                        redirect_uri="https://oxhack-2026-submission.onrender.com",
                         scope="openid email profile",
                         key="google_login",
                         use_container_width=True
