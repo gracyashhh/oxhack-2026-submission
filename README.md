@@ -93,7 +93,7 @@ Start the integrated app with `./run.command`. The launcher uses this folder's `
 
 * **Dream Environment:** A fully interactive drag-and-drop 3D soundboard for users to build their own spatial audio rooms.
 
-*Created by [Your Team Name] for OxHack*
+*Created by Chronos for OxHack*
 ## Current Streamlit app
 
 Run `python -m streamlit run app.py` from this folder.
