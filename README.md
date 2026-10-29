@@ -63,8 +63,8 @@ Start the integrated app with `./run.command`. The launcher uses this folder's `
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/chronos.git
-   cd chronos
+   git clone https://github.com/gracyashhh/oxhack-2026-submission.git
+   cd oxhack-2026-submission
    ```
 
 2. Install dependencies:
@@ -94,6 +94,7 @@ Start the integrated app with `./run.command`. The launcher uses this folder's `
 * **Dream Environment:** A fully interactive drag-and-drop 3D soundboard for users to build their own spatial audio rooms.
 
 *Created by Chronos for OxHack*
+
 ## Current Streamlit app
 
 Run `python -m streamlit run app.py` from this folder.
